@@ -1,0 +1,18 @@
+.baseHeaderContainer {
+  background-color: #0000ff;
+  color: #fff;
+  background: transparent;
+  height: 67px;
+  width: 100%;
+  border-bottom: 1px solid #5e5e5e;
+}
+
+.baseHeaderTitle {
+  font-size: 20px;
+  font-weight: bold;
+  height: 100%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding-left: 25px;
+}
