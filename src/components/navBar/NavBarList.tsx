@@ -7,36 +7,20 @@ interface NavBarListProps {
 }
  
 export const NavBarList: React.FC<NavBarListProps> = ({ passTabNameToParent }) => {
+    const tabs = ['Assets', 'Trade', 'Pay', 'For You', 'Learn and earn', 'Notifications', 'Invite Friends']
+    
+    let tabList = tabs.map((tab) => {
+        return (
+            <NavBarListButton
+                name={tab}
+                passToParent={passTabNameToParent}
+            />
+        )
+    })
+    
     return ( 
         <div className='navBarList'>
-            <NavBarListButton 
-                name='Assets'
-                passToParent={passTabNameToParent}
-            />
-            <NavBarListButton
-                name='Trade'
-                passToParent={passTabNameToParent}
-            />
-            <NavBarListButton 
-                name='Pay'
-                passToParent={passTabNameToParent}
-            />
-            <NavBarListButton
-                name='For You'
-                passToParent={passTabNameToParent}
-            />
-            <NavBarListButton 
-                name='Learn and earn'
-                passToParent={passTabNameToParent}
-            />
-            <NavBarListButton
-                name='Notifications'
-                passToParent={passTabNameToParent}
-            />
-            <NavBarListButton 
-                name='Invite Friends'
-                passToParent={passTabNameToParent}
-            />
+            {tabList}
         </div>
      );
 }
