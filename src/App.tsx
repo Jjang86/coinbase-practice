@@ -1,8 +1,8 @@
 import React, { useState, useCallback } from 'react';
 import './styles.css';
-import { NavBarContainer } from './components/navBar/NavBarContainer';
 import { BaseHeaderContainer } from './components/baseHeaderBar/baseHeaderContainer';
-import {DialogBox} from './components/dialogBox'
+import {DialogBox} from './components/common/dialogBox'
+import {NavBarContainer} from './components/navBar/navBarContainer'
 
 const App: React.FC = () => {
   const [activeTabName, setActiveTabName] = useState('Assets');

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { NavBarListButton } from './NavBarListButton'
+import { NavBarListButton } from './navBarListButton';
 import './navBarStyles.css';
 
 interface NavBarListProps {

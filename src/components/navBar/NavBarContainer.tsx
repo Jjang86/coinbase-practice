@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { NavBarHeader } from './NavBarHeader';
-import { NavBarList } from './NavBarList';
+import { NavBarHeader } from './navBarHeader';
+import { NavBarList } from './navBarList';
 import './navBarStyles.css';
 
 interface NavBarContainerProps {
