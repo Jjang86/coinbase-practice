@@ -1,7 +1,7 @@
 .navBarContainer {
-  border-right: 1px solid #5e5e5e;
+  border-right: var(--border);
   height: 100vh;
-  width: 300px;
+  width: 275px;
 }
 
 .navBarHeader {
@@ -14,10 +14,7 @@
 
 .navBarList {
   color: var(--text-unselected);
-  display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .navBarListButton {
@@ -26,9 +23,6 @@
   margin-bottom: 15px;
   width: 225px;
   height: 50px;
-  display: flex;
-  justify-content: left;
-  align-items: center;
   padding-left: 25px;
   border-radius: 5px;
 }

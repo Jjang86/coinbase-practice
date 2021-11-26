@@ -14,12 +14,12 @@
   --primary-background: #000;
   --text-selected: var(--primary-blue);
   --text-unselected: white;
+  --border: 1px solid #5e5e5e;
 }
 
 body {
   font-family: "Open Sans";
   margin: 0px;
-  overflow: hidden;
 }
 
 .main {
@@ -28,6 +28,18 @@ body {
   display: flex;
   flex-direction: row;
   position: relative;
+}
+
+.center-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-center {
+  display: flex;
+  justify-content: left;
+  align-items: center;
 }
 
 .full-width {

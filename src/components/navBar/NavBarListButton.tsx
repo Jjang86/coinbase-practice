@@ -8,7 +8,7 @@ interface NavBarListButtonProps {
  
 export const NavBarListButton: React.FC<NavBarListButtonProps> = ({name, passToParent}) => {
     return (
-        <button className='navBarListButton' onClick={() => passToParent(name)}>
+        <button className='left-center navBarListButton' onClick={() => passToParent(name)}>
             {name}
         </button>
     );

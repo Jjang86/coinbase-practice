@@ -3,7 +3,7 @@
   background: transparent;
   height: 67px;
   width: 100%;
-  border-bottom: 1px solid #5e5e5e;
+  border-bottom: var(--border);
   display: flex;
   justify-content: space-between;
 }
@@ -42,7 +42,7 @@
 .header-send-recieve-button {
   background-color: var(--primary-background);
   color: var(--text-unselected);
-  border: 1px solid #5e5e5e;
+  border: var(--border);
   margin: 0px 10px;
 }
 

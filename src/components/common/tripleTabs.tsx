@@ -9,13 +9,13 @@ interface TripleTabsProps {
 export const TripleTabs: React.FC<TripleTabsProps> = ({ firstTabName, secondTabName, thirdTabName}) => {
     return (
         <div className='triple-tabs-container'>
-            <p className='triple-tabs'>
+            <p className='center-center triple-tabs'>
                 {firstTabName}
             </p>
-            <p className='triple-tabs'>
+            <p className='center-center triple-tabs'>
                 {secondTabName}
             </p>
-            <p className='triple-tabs'>
+            <p className='center-center triple-tabs'>
                 {thirdTabName}
             </p>
         </div>

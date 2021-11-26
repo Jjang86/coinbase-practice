@@ -1,24 +1,49 @@
 .overlay {
   height: 100vh;
   width: 100vw;
-  background-color: rgba(155, 155, 155, 0.7);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-color: rgba(30, 30, 30, 0.5);
 }
 
 .dialog-box {
-  height: 500px;
-  width: 350px;
+  height: 525px;
+  width: 375px;
   background-color: var(--primary-background);
+  display: flex;
+  flex-direction: column;
+}
+
+.triple-tabs-container {
+  height: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.triple-tabs {
+  color: var(--text-unselected);
+  border: var(--border);
+  width: 100%;
 }
 
 .dialog-body {
   color: var(--text-unselected);
+  flex: 1;
+}
+
+.dialog-body-message {
+  height: 60px;
+  width: 100px;
+  border: var(--border);
+}
+
+.dialog-footer {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .dialog-button {
   height: 50px;
   width: 100px;
   color: var(--text-unselected);
+  border: var(--border);
 }

@@ -19,7 +19,7 @@ export const NavBarList: React.FC<NavBarListProps> = ({ passTabNameToParent }) =
     })
     
     return ( 
-        <div className='navBarList'>
+        <div className='center-center navBarList'>
             {tabList}
         </div>
      );
