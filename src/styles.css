@@ -8,9 +8,18 @@
   background: transparent;
 }
 
+:root {
+  --primary-blue: #4179e0;
+  --hover-blue: #6e96df;
+  --primary-background: #000;
+  --text-selected: var(--primary-blue);
+  --text-unselected: white;
+}
+
 body {
   font-family: "Open Sans";
   margin: 0px;
+  overflow: hidden;
 }
 
 .main {
@@ -18,4 +27,36 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: row;
+  position: relative;
+}
+
+.full-width {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+}
+
+.overlay {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(155, 155, 155, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dialog-box {
+  height: 500px;
+  width: 300px;
+  background-color: var(--primary-background);
+}
+
+.dialog-body {
+  color: var(--text-unselected);
+}
+
+.dialog-button {
+  height: 50px;
+  width: 100px;
+  color: var(--text-unselected);
 }

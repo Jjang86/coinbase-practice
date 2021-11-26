@@ -1,10 +1,11 @@
 .baseHeaderContainer {
-  background-color: #0000ff;
-  color: #fff;
+  color: var(--text-unselected);
   background: transparent;
   height: 67px;
   width: 100%;
   border-bottom: 1px solid #5e5e5e;
+  display: flex;
+  justify-content: space-between;
 }
 
 .baseHeaderTitle {
@@ -15,4 +16,48 @@
   justify-content: left;
   align-items: center;
   padding-left: 25px;
+}
+
+.baseHeaderRightContainer {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.header-button {
+  font-size: 15px;
+  height: 40px;
+  padding: 0px 20px;
+  border-radius: 5px;
+}
+
+.header-buy-sell-button {
+  background-color: var(--primary-blue);
+}
+
+.header-buy-sell-button:hover {
+  background-color: var(--hover-blue);
+}
+
+.header-send-recieve-button {
+  background-color: var(--primary-background);
+  color: var(--text-unselected);
+  border: 1px solid #5e5e5e;
+  margin: 0px 10px;
+}
+
+.divider {
+  display: inline-block;
+  width: 1px;
+  background-color: #5e5e5e;
+  margin: 0 10px;
+  height: 40px;
+}
+
+.profile-button {
+  background-color: lightgray;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  margin: 0px 10px;
 }

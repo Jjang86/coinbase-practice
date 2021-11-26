@@ -13,7 +13,7 @@
 }
 
 .navBarList {
-  color: #fff;
+  color: var(--text-unselected);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -21,7 +21,7 @@
 }
 
 .navBarListButton {
-  color: #fff;
+  color: var(--text-unselected);
   background: transparent;
   margin-bottom: 15px;
   width: 225px;
