@@ -16,7 +16,6 @@ interface Context {
     updateMessages: (bodyMessage: string, confirmMessage: string, cancelMessage: string) => void;
 }
 
-const UpdateDialogContext = createContext(() => {});
 const ShowDialogContext = createContext<Context | null>(null)
 
 export const useShowDialogContext = () => {
@@ -49,12 +48,10 @@ export const DialogBox: React.FC<Props> = ({ children }) => {
            'toggleDialog': toggleDialog,
            'updateMessages': updateMessages
         }}>
-           <UpdateDialogContext.Provider value={toggleDialog}>
                { children }
                <div>
                    {showDialog && <DialogBoxContents/>}
                </div>
-           </UpdateDialogContext.Provider>
        </ShowDialogContext.Provider>
     );
 }
