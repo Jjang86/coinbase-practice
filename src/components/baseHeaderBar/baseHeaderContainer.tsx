@@ -1,13 +1,13 @@
 import React from 'react';
 import './baseHeaderBarStyles.css'
-import { useUpdateDialogContext } from '../common/dialogBox'
+import { useShowDialogContext } from '../common/dialogBox'
 
 interface BaseHeaderContainerProps {
     tabName: string
 }
  
 export const BaseHeaderContainer: React.FC<BaseHeaderContainerProps> = ({ tabName }) => {
-    const toggleDialogBox = useUpdateDialogContext();
+    const dialogContext = useShowDialogContext();
 
     return (
         <div className='baseHeaderContainer'>
@@ -17,7 +17,11 @@ export const BaseHeaderContainer: React.FC<BaseHeaderContainerProps> = ({ tabNam
             <div className='baseHeaderRightContainer'>
                 <button
                     className='header-button header-buy-sell-button'
-                    onClick={ toggleDialogBox }
+                    onClick={ () =>{
+                            dialogContext?.updateMessages('WOOOOOO', 'ITTTT', 'WORKSSSS');
+                            dialogContext?.toggleDialog(); 
+                        }
+                    }
                 >
                     Buy / Sell
                 </button>
