@@ -12,6 +12,7 @@ export const NavBarList: React.FC<NavBarListProps> = ({ passTabNameToParent }) =
     let tabList = tabs.map((tab) => {
         return (
             <NavBarListButton
+                key={tab}
                 name={tab}
                 passToParent={passTabNameToParent}
             />

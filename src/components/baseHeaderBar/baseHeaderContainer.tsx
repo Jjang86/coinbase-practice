@@ -1,12 +1,14 @@
 import React from 'react';
 import './baseHeaderBarStyles.css'
+import { useUpdateDialogContext } from '../common/dialogBox'
 
 interface BaseHeaderContainerProps {
-    showDialog: (show: boolean, bodyMessage: string, confirmMessage: string, cancelMessage: string) => void,
     tabName: string
 }
  
-export const BaseHeaderContainer: React.FC<BaseHeaderContainerProps> = ({ showDialog, tabName }) => {
+export const BaseHeaderContainer: React.FC<BaseHeaderContainerProps> = ({ tabName }) => {
+    const toggleDialogBox = useUpdateDialogContext();
+
     return (
         <div className='baseHeaderContainer'>
             <p className='baseHeaderTitle'>
@@ -15,7 +17,7 @@ export const BaseHeaderContainer: React.FC<BaseHeaderContainerProps> = ({ showDi
             <div className='baseHeaderRightContainer'>
                 <button
                     className='header-button header-buy-sell-button'
-                    onClick={() => showDialog(true, 'it works', 'woot', 'bye')}
+                    onClick={ toggleDialogBox }
                 >
                     Buy / Sell
                 </button>

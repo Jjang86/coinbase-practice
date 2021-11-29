@@ -1,46 +1,44 @@
-import React, {useRef, useEffect, createRef} from 'react';
-import { TripleTabs } from './tripleTabs';
+import React, { useState, createContext, useContext} from 'react';
+
+import { DialogBoxContents } from './dialogBoxContents';
 import './common.css'
 
 interface Props {
-    showDialog: (show: boolean) => void;
-    bodyMessage: string;
-    confirmText: string;
-    cancelText: string;
+    children: any;
 }
 
-export const DialogBox: React.FC<Props> = ({ showDialog, bodyMessage, confirmText, cancelText}) => {
-    const useOutsideAlerter = (ref: React.MutableRefObject<any>, hideDialog: () => void) => {
-        useEffect(() => {
-            const handleClickOutside = (event: MouseEvent) => {
-                if (ref.current && !ref.current.contains(event.target)) {
-                    hideDialog();
-                }
-            }
-            document.addEventListener('mousedown', handleClickOutside);
-            return () => document.removeEventListener('mousedown', handleClickOutside);
-        }, [ref])
-    }
+const UpdateDialogContext = createContext(() => {});
+const ShowDialogContext = createContext(false)
 
-    const hideDialogBox = () => {showDialog(false)}
-    const dialogRef = useRef(null);
-    useOutsideAlerter(dialogRef, hideDialogBox);
+export const useUpdateDialogContext = () => {
+    return useContext(UpdateDialogContext);
+}
+
+export const useShowDialogContext = () => {
+    return useContext(ShowDialogContext);
+}
+
+export const DialogBox: React.FC<Props> = ({ children }) => {
+    const [showDialog, setShowDialog] = useState(false);
+    const toggleDialog = () => {
+        setShowDialog(!showDialog);
+    };
+
+    const dialogBodyMessage = 'WOW';
+    const dialogConfirmMessage = 'YAY';
+    const dialogCancelMessage = 'OMG';
 
     return (
         /* 
         This could have been separated into components, but decided to keep it simple for now.
         */
-        <div className='overlay center-center full-width'>
-            <div ref={dialogRef} className='dialog-box'>
-                <TripleTabs firstTabName='Buy' secondTabName='Sell' thirdTabName='Convert'/>
-                <div className='center-center dialog-body'>
-                    <p className='center-center dialog-body-message' onClick={hideDialogBox}>{bodyMessage}</p>
-                </div>
-                <div className='dialog-footer'>
-                    <button className='dialog-button' onClick={hideDialogBox}>{confirmText}</button>
-                    <button className='dialog-button cancel-dialog-button'onClick={hideDialogBox}>{cancelText}</button>
-                </div>
-            </div>
-        </div>
+       <ShowDialogContext.Provider value={showDialog}>
+           <UpdateDialogContext.Provider value={toggleDialog}>
+               { children }
+               <div>
+                   {showDialog && <DialogBoxContents bodyMessage={dialogBodyMessage} confirmText={dialogConfirmMessage} cancelText={dialogCancelMessage}/>}
+               </div>
+           </UpdateDialogContext.Provider>
+       </ShowDialogContext.Provider>
     );
 }
