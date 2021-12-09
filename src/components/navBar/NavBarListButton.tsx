@@ -1,14 +1,15 @@
 import * as React from 'react';
 import './navBarStyles.css';
+import { useTabContextValues } from '../common/tabContext'
 
 interface NavBarListButtonProps {
     name: string
-    passToParent: (args: string) => void
 }
  
-export const NavBarListButton: React.FC<NavBarListButtonProps> = ({name, passToParent}) => {
+export const NavBarListButton: React.FC<NavBarListButtonProps> = ({name}) => {
+    const contextValues = useTabContextValues();
     return (
-        <button className='left-center navBarListButton' onClick={() => passToParent(name)}>
+        <button className='left-center navBarListButton' onClick={() => contextValues?.setName(name)}>
             {name}
         </button>
     );

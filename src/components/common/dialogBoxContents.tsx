@@ -20,11 +20,14 @@ export const DialogBoxContents: React.FC = () => {
     useOutsideAlerter(dialogRef);
 
     return (
+        /* 
+        This could have been separated into components, but decided to keep it simple for now.
+        */
         <div className='overlay center-center full-width'>
             <div ref={dialogRef} className='dialog-box'>
                 <TripleTabs firstTabName='Buy' secondTabName='Sell' thirdTabName='Convert'/>
                 <div className='center-center dialog-body'>
-                    <p className='center-center dialog-body-message' onClick={dialogContext?.toggleDialog}>{dialogContext?.bodyMessage}</p>
+                    <p className='center-center dialog-body-message'>{dialogContext?.bodyMessage}</p>
                 </div>
                 <div className='dialog-footer'>
                     <button className='dialog-button confirm-dialog-button' onClick={dialogContext?.toggleDialog}>{dialogContext?.confirmText}</button>

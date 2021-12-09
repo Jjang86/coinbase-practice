@@ -18,7 +18,7 @@ interface Context {
 
 const ShowDialogContext = createContext<Context | null>(null)
 
-export const useShowDialogContext = () => {
+export const useShowDialogContext = (): Context | null =>  {
     return useContext(ShowDialogContext);
 }
 
@@ -37,9 +37,6 @@ export const DialogBox: React.FC<Props> = ({ children }) => {
     }
 
     return (
-        /* 
-        This could have been separated into components, but decided to keep it simple for now.
-        */
        <ShowDialogContext.Provider value={{
            'show': [showDialog, setShowDialog],
            'bodyMessage': [dialogBodyMessage, setDialogBodyMessage],

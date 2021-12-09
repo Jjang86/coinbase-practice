@@ -3,10 +3,9 @@ import { NavBarListButton } from './navBarListButton';
 import './navBarStyles.css';
 
 interface NavBarListProps {
-    passTabNameToParent: (args: string) => void
 }
  
-export const NavBarList: React.FC<NavBarListProps> = ({ passTabNameToParent }) => {
+export const NavBarList: React.FC<NavBarListProps> = () => {
     const tabs = ['Assets', 'Trade', 'Pay', 'For You', 'Learn and earn', 'Notifications', 'Invite Friends']
     
     let tabList = tabs.map((tab) => {
@@ -14,7 +13,6 @@ export const NavBarList: React.FC<NavBarListProps> = ({ passTabNameToParent }) =
             <NavBarListButton
                 key={tab}
                 name={tab}
-                passToParent={passTabNameToParent}
             />
         )
     })
