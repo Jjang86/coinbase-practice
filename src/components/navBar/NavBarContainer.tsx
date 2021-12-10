@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { NavBarHeader } from './navBarHeader';
-import { NavBarList } from './navBarList';
+import { NavBarHeader } from './NavBarHeader';
+import { NavBarList } from './NavBarList';
 import './navBarStyles.css';
 
 export const NavBarContainer: React.FC = () => {

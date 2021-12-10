@@ -2,7 +2,7 @@ import React from 'react';
 import './styles.css';
 import { BaseHeaderContainer } from './components/baseHeaderBar/baseHeaderContainer';
 import { DialogBox } from './components/common/dialogBox'
-import { NavBarContainer } from './components/navBar/navBarContainer'
+import { NavBarContainer } from './components/navBar/NavBarContainer'
 import { TabContext } from './components/common/tabContext';
 
 const App: React.FC = () => {
